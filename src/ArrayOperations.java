@@ -6,7 +6,7 @@ public class ArrayOperations {
             int carry = 0;
 
 
-                for (int i = lange - 1; i >= 0; i--) {
+            for (int i = lange - 1; i >= 0; i--) {
                     int sum = a[i] + b[i] + carry;
                     tempResult[i] = sum % 10;
                     carry = sum / 10;
@@ -24,6 +24,7 @@ public class ArrayOperations {
 
                 return result;
             }
+            
             else {
                 return tempResult;
             }
