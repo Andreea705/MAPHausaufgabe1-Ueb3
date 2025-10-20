@@ -7,6 +7,10 @@ void main() {
     int[] b1 = {8, 7, 0, 0, 0, 0, 0, 0};
     int[] sum = a.add_array_numbers(a1, b1);
 
+    int[] a2 = {8,3,0,0,0,0,0,0,0};
+    int[] b2 = {5,4,0,0,0,0,0,0,0};
+    int[] diff = a.subtract_array_numbers(a2, b2);
+
     System.out.print("Addition: ");
 
     for (int i = 0; i < sum.length; i++) {
@@ -15,6 +19,18 @@ void main() {
             System.out.print(" ");
         }
     }
+
+
+    System.out.println("\nSubtrakiton: ");
+
+    for (int i = 0; i < diff.length; i++) {
+        System.out.print(diff[i]);
+        if (i < diff.length - 1) {
+            System.out.print(" ");
+        }
+    }
+
+
 
 
 

@@ -24,10 +24,32 @@ public class ArrayOperations {
 
                 return result;
             }
-            
+
             else {
                 return tempResult;
             }
         }
 
+    public static int[] subtract_array_numbers(int[] a, int[] b) {
+        int lange = a.length;
+        int[] result = new int[lange];
+        int borrow = 0;
+
+        for (int i = lange - 1; i >= 0; i--) {
+
+            int diff = a[i] - borrow - b[i];
+
+            if (diff < 0) {
+                diff += 10;
+                borrow = 1;
+            }
+            else {
+                borrow = 0;
+            }
+
+            result[i] = diff;
+        }
+
+        return result;
+    }
 }
