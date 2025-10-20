@@ -36,20 +36,34 @@ public class ArrayOperations {
         int borrow = 0;
 
         for (int i = lange - 1; i >= 0; i--) {
-
             int diff = a[i] - borrow - b[i];
 
             if (diff < 0) {
                 diff += 10;
                 borrow = 1;
-            }
-            else {
+            } else {
                 borrow = 0;
             }
 
             result[i] = diff;
         }
 
-        return result;
+        int firstNonZero = 0;
+
+        while (firstNonZero < lange && result[firstNonZero] == 0) {
+            firstNonZero++;
+        }
+
+        if (firstNonZero == lange) {
+            return new int[]{0};
+        }
+
+        int[] endResult = new int[lange - firstNonZero];
+        for (int i = 0; i < endResult.length; i++) {
+            endResult[i] = result[firstNonZero + i];
+        }
+
+        return endResult;
+
     }
 }

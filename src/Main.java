@@ -8,7 +8,7 @@ void main() {
     int[] sum = a.add_array_numbers(a1, b1);
 
     int[] a2 = {8,3,0,0,0,0,0,0,0};
-    int[] b2 = {5,4,0,0,0,0,0,0,0};
+    int[] b2 = {8,2,9,0,0,0,0,0,0};
     int[] diff = a.subtract_array_numbers(a2, b2);
 
     System.out.print("Addition: ");
