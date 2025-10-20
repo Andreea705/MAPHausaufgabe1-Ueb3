@@ -8,10 +8,11 @@ void main() {
     int[] sum = a.add_array_numbers(a1, b1);
 
     int[] a2 = {8,3,0,0,0,0,0,0,0};
-    int[] b2 = {8,2,9,0,0,0,0,0,0};
+    int[] b2 = {8,2,0,0,0,0,0,0,0};
     int[] diff = a.subtract_array_numbers(a2, b2);
 
     int[] mul = a.multiplikation_on_array(a1,9);
+    int[] div = a.division_on_array(b2,5);
 
     System.out.println("\nAddition: ");
 
@@ -32,7 +33,7 @@ void main() {
         }
     }
 
-    System.out.println("\nMultiplikation: ");
+    System.out.println("\n Multiplikation:");
     for (int i = 0; i < mul.length; i++) {
         System.out.print(mul[i]);
         if (i < mul.length - 1) {
@@ -40,6 +41,13 @@ void main() {
         }
     }
 
+    System.out.println("\nDivision: ");
+    for (int i = 0; i < div.length; i++) {
+        System.out.print(div[i]);
+        if (i < div.length - 1) {
+            System.out.print(" ");
+        }
+    }
 
 
 

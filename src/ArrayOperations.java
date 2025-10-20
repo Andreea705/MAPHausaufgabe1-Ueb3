@@ -91,8 +91,38 @@ public class ArrayOperations {
         else{
             return tempResult;
         }
+    }
 
+    public static int[] division_on_array(int[] array1, int ziffer){
+        int lange = array1.length;
+        int[] tempResult = new int[lange];
+        int rest = 0;
 
+        for (int i = 0; i < lange; i++) {
+            int division = rest * 10 + array1[i];
+            tempResult[i] = division / ziffer;
+            rest = division % ziffer;
+        }
+
+        int firstNonZero = 0;
+
+        while (firstNonZero < lange && tempResult[firstNonZero] == 0) {
+            firstNonZero++;
+        }
+
+        if (firstNonZero == lange) {
+            return new int[]{0};
+        }
+
+        int[] result = new int[lange - firstNonZero];
+
+        for (int i = 0; i < result.length; i++) {
+            result[i] = tempResult[firstNonZero + i];
+        }
+
+        return result;
 
     }
+
+
 }
