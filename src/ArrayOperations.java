@@ -1,13 +1,13 @@
 public class ArrayOperations {
 
-    public static int[] add_array_numbers(int[] a, int[] b) {
-            int lange = a.length;
+    public static int[] add_array_numbers(int[] array1, int[] array2) {
+            int lange = array1.length;
             int[] tempResult = new int[lange];
             int carry = 0;
 
 
             for (int i = lange - 1; i >= 0; i--) {
-                    int sum = a[i] + b[i] + carry;
+                    int sum = array1[i] + array2[i] + carry;
                     tempResult[i] = sum % 10;
                     carry = sum / 10;
             }
@@ -30,13 +30,13 @@ public class ArrayOperations {
             }
         }
 
-    public static int[] subtract_array_numbers(int[] a, int[] b) {
-        int lange = a.length;
+    public static int[] subtract_array_numbers(int[] array1, int[] array2) {
+        int lange = array1.length;
         int[] result = new int[lange];
         int borrow = 0;
 
         for (int i = lange - 1; i >= 0; i--) {
-            int diff = a[i] - borrow - b[i];
+            int diff = array1[i] - borrow - array2[i];
 
             if (diff < 0) {
                 diff += 10;
@@ -64,6 +64,35 @@ public class ArrayOperations {
         }
 
         return endResult;
+
+    }
+
+    public static int[] multiplikation_on_array(int[] array1, int ziffer){
+
+        int lange = array1.length;
+        int[] tempResult = new int[lange];
+        int carry = 0;
+
+        for (int i = lange - 1; i >= 0; i--) {
+            int produkt = array1[i] * ziffer + carry;
+            tempResult[i] = produkt%10;
+            carry = produkt / 10;
+        }
+
+        if(carry > 0){
+            int[] result = new int[lange + 1];
+            result[0] = carry;
+
+            for(int i = 1; i <= lange; i++){
+                result[i] = tempResult[i - 1];
+            }
+            return result;
+        }
+        else{
+            return tempResult;
+        }
+
+
 
     }
 }
